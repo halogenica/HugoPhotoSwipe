@@ -107,7 +107,7 @@ class Album(object):
         """ Create the markdown file, always overwrite existing """
         # Create the header for Hugo
         if not self.coverimage is None:
-            coverpath = (settings.url_prefix +
+            coverpath = (('' if settings.url_prefix is None else settings.url_prefix) +
                     self.cover_path[len(settings.output_dir):])
         else:
             coverpath = ''
